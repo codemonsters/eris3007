@@ -5,12 +5,12 @@
 * RPG
 * Objetivo: amotinarse cintra los jefes malos
 * 2D con vista cenital
-* maximo tres aliados que nos acompañan, cada uno con sus habilidades y estadisticas
-* misiones secundarias para conseguir aliados
-* parte conversacional importante
-* parte de accion (ligera)
-* puzzles integrados en la historia
-* posibilidad de muerte
-* unica vida
-* varios finales
-* exploracion y experiencia útiles
+* Maximo tres aliados que nos acompañan, cada uno con sus habilidades y estadisticas
+* Misiones secundarias para conseguir aliados
+* Parte conversacional importante
+* Parte de accion (ligera)
+* Puzzles integrados en la historia
+* Posibilidad de muerte
+* Unica vida
+* Varios finales
+* Exploracion y experiencia útiles

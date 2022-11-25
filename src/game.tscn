@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://gb436a5wrwva"]
+[gd_scene load_steps=2 format=3 uid="uid://gb436a5wrwva"]
 
-[node name="Game" type="Node2D"]
+[ext_resource type="Script" path="res://game.gd" id="1_di21x"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 13.0
+offset_right = -927.0
+offset_bottom = -567.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_di21x")

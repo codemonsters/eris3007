@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Laboratorio-22-23"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=144
+window/size/window_width_override=1024
+window/size/window_height_override=576
+window/stretch/mode="viewport"
 
 [rendering]
 

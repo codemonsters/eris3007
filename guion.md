@@ -12,8 +12,7 @@ Pasos:
 
 - Encender ordenador
 - Mirar correo
-- <Salir hacia sala de mítines
-- 
+- Salir hacia sala de mítines
 
 
 ## Brainstorming
@@ -31,4 +30,4 @@ Pasos:
 - Heracles
 - Eris
 - Tánatos
-Existe una grupo organizado rebelde, aunque
+- Existe una grupo organizado rebelde, aunque

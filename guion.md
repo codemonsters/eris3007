@@ -6,23 +6,29 @@ La historia de un joven e inexperto trabajador que llega a una refinería de tri
 
 ## Escena 1
 
-Se despierta en el dormitorio y recibe un mail/correo de administración/de bienvenida. Hasta que leas el correo no
+Se despierta en el dormitorio y recibe un mail/correo de administración/de bienvenida. Hasta que leas el correo no puedes salir de la habitación.
+
+Pasos:
+
+- Encender ordenador
+- Mirar correo
+- <Salir hacia sala de mítines
+- 
 
 
 ## Brainstorming
 
 ### Ideas de nombres para planetas
 
-Fulgora
-Issa
-Vesta
-Genita
-Lares
-Libera
-Laverna x
-Hefesto
-Heracles
-Eris
-Tánatos x
+- Fulgora
+- Issa
+- Vesta
+- Genita
+- Lares
+- Libera
+- Laverna
+- Hefesto
+- Heracles
+- Eris
+- Tánatos
 Existe una grupo organizado rebelde, aunque
-Mineral: tritonio?

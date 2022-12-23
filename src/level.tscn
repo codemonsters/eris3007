@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://gb436a5wrwva"]
+[gd_scene load_steps=30 format=3 uid="uid://gb436a5wrwva"]
 
 [ext_resource type="Texture2D" uid="uid://cv2872gh75qvp" path="res://Dungeon_Tileset.png" id="1_4kwex"]
+[ext_resource type="PackedScene" uid="uid://dtp60v8bkbg01" path="res://npc.tscn" id="3_dxksf"]
 [ext_resource type="PackedScene" uid="uid://cbtpckigns7l6" path="res://hero.tscn" id="4_x2shb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_px51v"]
@@ -438,3 +439,5 @@ layer_0/tile_data = PackedInt32Array(-458786, 131074, 2, -393250, 131074, 2, -32
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("4_x2shb")]
 position = Vector2(-311, -56)
+
+[node name="npc" parent="." instance=ExtResource("3_dxksf")]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtp60v8bkbg01"]
+
+[ext_resource type="Texture2D" uid="uid://p5j75tirlukm" path="res://assets/monigote 32x32.png" id="1_pvpry"]
+
+[sub_resource type="GDScript" id="GDScript_rdgha"]
+script/source = "extends CharacterBody2D
+
+
+func _physics_process(delta):
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6m8i8"]
+
+[node name="npc" type="CharacterBody2D"]
+script = SubResource("GDScript_rdgha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pvpry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6m8i8")

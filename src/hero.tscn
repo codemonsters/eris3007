@@ -11,6 +11,7 @@ height = 32.0
 script = ExtResource("1_l36rv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
 texture_filter = 1
 texture = ExtResource("2_axuof")
 

@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
 @export var nav_optimize_path : bool = false
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 var speed = 250
+var speed_test = 300
 var path = []
 
-# final navigation destination position/point
-var nav_destination : Vector2 
-# The normal path to the destination
-var character_nav_path : Array = []
+func _ready():
+	nav_agent.path_desired_distance = 4.0
+	nav_agent.target_desired_distance = 4.0
 
 
 func get_input():
@@ -23,22 +24,27 @@ func get_input():
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
 	if Input.is_action_just_pressed('click'):
-		pass
+		update_target_location(Vector2(44, 184))
+		
 #		path = NavigationServer2D.map_get_path(get_parent(), self.position, get_local_mouse_position())
 	velocity = velocity.normalized() * speed
 
 
 func _physics_process(delta):
-	get_input()
-	move_and_collide(velocity * delta)
-
-
-func set_navigation_position(nav_position_to_set : Vector2) -> void:
-	nav_destination = nav_position_to_set
+	if nav_agent.is_target_reached():
+		return
+	var current_agent_position : Vector2 = global_transform.origin
+	var next_path_position : Vector2 = nav_agent.get_next_location()
 	
-	# set the new character target location
-	$NavigationAgent2D.set_target_location(nav_destination)
+	var new_vel = (next_path_position - current_agent_position).normalized() * speed_test
+
 	
-	# calculate a new map path with the server using character nav agent map and new nav destination
-	character_nav_path = NavigationServer2D.map_get_path($NavigationAgent2D.get_navigation_map(), global_position, nav_destination, nav_optimize_path)
-	print(character_nav_path)
+	
+	set_velocity(new_vel)
+
+#	get_input()
+	move_and_slide()
+	
+func update_target_location(target_location: Vector2):
+	nav_agent.set_target_location(target_location)
+

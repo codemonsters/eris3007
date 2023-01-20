@@ -12,5 +12,5 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_pressed("click"):
-		print("Event click: ", event.position)
-		$Hero.set_navigation_position(get_global_mouse_position())
+#		print("Event click: ", event.position)
+		$Hero.update_target_location(get_global_mouse_position())

@@ -32,5 +32,4 @@ texture = ExtResource("3_jyqix")
 texture_scale = 2.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 85.19
 avoidance_enabled = true

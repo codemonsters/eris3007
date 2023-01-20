@@ -23,8 +23,8 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
-	if Input.is_action_just_pressed('click'):
-		update_target_location(Vector2(44, 184))
+#	if Input.is_action_just_pressed('click'):
+#		update_target_location(Vector2(44, 184))
 		
 #		path = NavigationServer2D.map_get_path(get_parent(), self.position, get_local_mouse_position())
 	velocity = velocity.normalized() * speed

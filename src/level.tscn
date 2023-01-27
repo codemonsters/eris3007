@@ -32,7 +32,7 @@ vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 polygons = [PackedInt32Array(0, 1, 2, 3)]
 outlines = [PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_35bao"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_io8v0"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_crmws"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -579,7 +579,7 @@ texture = ExtResource("1_4kwex")
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, -8)
-1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_35bao")
+1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_io8v0")
 5:1/0 = 0
 5:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_4nqus")
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -633,8 +633,6 @@ sources/2 = SubResource("TileSetAtlasSource_gvxhj")
 [node name="Level" type="Node2D"]
 position = Vector2(543, 128)
 script = ExtResource("1_ehlvl")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)

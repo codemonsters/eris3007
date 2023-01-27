@@ -15,6 +15,12 @@ func _ready():
 func get_input():
 	# Detect up/down/left/right keystate and only move when pressed.
 	velocity = Vector2()
+	if not nav_agent.is_target_reached() and nav_agent.is_target_reachable():
+		var current_agent_position : Vector2 = global_transform.origin
+		var next_path_position : Vector2 = nav_agent.get_next_location()
+		var new_vel = (next_path_position - current_agent_position).normalized() * speed_test
+		set_velocity(new_vel)
+		return
 	if Input.is_action_pressed('ui_right'):
 		velocity.x += 1
 	if Input.is_action_pressed('ui_left'):
@@ -31,18 +37,7 @@ func get_input():
 
 
 func _physics_process(delta):
-	if nav_agent.is_target_reached():
-		return
-	var current_agent_position : Vector2 = global_transform.origin
-	var next_path_position : Vector2 = nav_agent.get_next_location()
-	
-	var new_vel = (next_path_position - current_agent_position).normalized() * speed_test
-
-	
-	
-	set_velocity(new_vel)
-
-#	get_input()
+	get_input()
 	move_and_slide()
 	
 func update_target_location(target_location: Vector2):

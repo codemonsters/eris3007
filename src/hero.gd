@@ -17,7 +17,7 @@ func get_input():
 	velocity = Vector2()
 	if not nav_agent.is_target_reached() and nav_agent.is_target_reachable():
 		var current_agent_position : Vector2 = global_transform.origin
-		var next_path_position : Vector2 = nav_agent.get_next_location()
+		var next_path_position : Vector2 = nav_agent.get_next_path_position()
 		var new_vel = (next_path_position - current_agent_position).normalized() * speed_test
 		set_velocity(new_vel)
 		return
@@ -29,6 +29,18 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
+	if Input.is_action_just_released('speak'):
+		var physics := get_world_2d().direct_space_state
+		var query = PhysicsShapeQueryParameters2D.new()
+		var shape := CircleShape2D.new()
+		shape.set_radius(50)
+		query.set_shape(shape)
+		query.set_collision_mask(2) # Check only for devices 
+		query.transform = global_transform
+		var results = physics.intersect_shape(query, 1)
+		if len(results) == 1:
+			print(results)
+			results[0]["collider"].speak()
 #	if Input.is_action_just_pressed('click'):
 #		update_target_location(Vector2(44, 184))
 		
@@ -41,5 +53,5 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func update_target_location(target_location: Vector2):
-	nav_agent.set_target_location(target_location)
+	nav_agent.set_target_position(target_location)
 

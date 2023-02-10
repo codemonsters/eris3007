@@ -110,6 +110,7 @@ sources/0 = SubResource("TileSetAtlasSource_83xw7")
 [node name="Level" type="Node2D"]
 position = Vector2(543, 128)
 script = ExtResource("1_ehlvl")
+dialog_path = "res://assets/dialog-sample.json"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)

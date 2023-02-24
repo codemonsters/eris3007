@@ -53,8 +53,15 @@ frame_edit_character = Frame(tab_characters)            # Frame para alojar todo
 
 frame_edit_character.pack(side="left", expand=True, fill="both")
 
-lbl_temp = Label(frame_edit_character, text="Edición del personaje")
-lbl_temp.pack()
+lbl_character_id = Label(frame_edit_character, text="Id: ").grid(row=0, column=0)
+txt_character_id = Label(frame_edit_character, text="[VALOR DEL ID AQUI]").grid(row=0, column=1)
+lbl_character_name = Label(frame_edit_character, text="Nombre: ").grid(row=1, column=0)
+txt_character_name = Label(frame_edit_character, text="[VALOR DEL NOMBRE AQUI]").grid(row=1, column=1)
+lbl_character_image = Label(frame_edit_character, text="Imagen: ").grid(row=2, column=0)
+txt_character_image = Label(frame_edit_character, text="[NOMBRE DEL ARCHIVO IMAGEN AQUÍ]").grid(row=2, column=1)
+
+
+#lbl_temp.pack()
 
 # Pestaña Diálogos
 

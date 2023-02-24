@@ -1,9 +1,9 @@
 # Editor de diálogos del juego
-# 
+
 # En Linux, requiere tener instalado TK (ej: "$ yay -S tk")
 
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, Frame, Label, Y
 
 
 def btn_new_character_pressed():
@@ -16,28 +16,52 @@ def btn_delete_character_pressed():
 
 root = tk.Tk()
 root.title("Editor de Diálogos")
-root.geometry("800x600") 
+root.geometry("800x600")
 
-tab_control = ttk.Notebook(root)
+tab_control = ttk.Notebook(root)                        # Grupo de pestañas principales de la aplicación
 
-tab_characters = ttk.Frame(tab_control)
-tab_dialogs = ttk.Frame(tab_control)
+tab_characters = ttk.Frame(tab_control)                 # Pestaña para gestionar los personajes
+tab_dialogs = ttk.Frame(tab_control)                    # Pestaña para gestionar los diálogos
 
-tab_control.add(tab_characters, text ='Personajes')
-tab_control.add(tab_dialogs, text ='Diálogos')
-tab_control.pack(expand = 1, fill ="both")
+tab_control.add(tab_characters, text='Personajes')
+tab_control.add(tab_dialogs, text='Diálogos')
+tab_control.pack(expand=True, fill="both")
 
-btn_new_character = ttk.Button(tab_characters, text="Nuevo personaje", command=btn_new_character_pressed)
+# Pestaña Personajes
+
+# Pestaña Personajes / Parte izquierda: Botones crear, eliminar y lista para seleccionar personaje
+
+frame_character_navigation = Frame(tab_characters)      # Frame para alojar todos los widgets de la navegación de personajes
+
+frame_character_navigation.pack(side="left", expand=False, fill="y")
+
+frame_buttons_select_character = Frame(frame_character_navigation)
+frame_buttons_select_character.pack()
+btn_new_character = ttk.Button(frame_buttons_select_character, text="Nuevo", command=btn_new_character_pressed)
 btn_new_character.pack(side="left", anchor="nw")
 
-btn_delete_character = ttk.Button(tab_characters, text="Eliminar personaje", command=btn_delete_character_pressed)
+btn_delete_character = ttk.Button(frame_buttons_select_character, text="Eliminar", command=btn_delete_character_pressed)
 btn_delete_character.pack(side="left", anchor="nw")
 
+lst_characters = tk.Listbox(frame_character_navigation)
 
+lst_characters.pack(side="bottom", anchor="n", expand=True, fill=Y)
 
+# Pestaña Personajes / Parte derecha: Campos para editar el personaje seleccionado o crear uno nuevo
 
+frame_edit_character = Frame(tab_characters)            # Frame para alojar todos los widgets de la edición de los personajes
 
+frame_edit_character.pack(side="left", expand=True, fill="both")
 
+lbl_temp = Label(frame_edit_character, text="Edición del personaje")
+lbl_temp.pack()
+
+# Pestaña Diálogos
+
+# TODO: Implementar
+
+# keep the window displaying
+root.mainloop()
 
 '''
 ttk.Label(tabPersonajes, 
@@ -55,6 +79,3 @@ ttk.Label(tabDialogos,
 message = tk.Label(root, text="Hello, World!")
 message.pack()
 '''
-
-# keep the window displaying
-root.mainloop()

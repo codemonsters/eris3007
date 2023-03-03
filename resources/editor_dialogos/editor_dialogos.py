@@ -3,7 +3,7 @@
 # En Linux, requiere tener instalado TK (ej: "$ yay -S tk")
 
 import tkinter as tk
-from tkinter import ttk, Frame, Label, Y
+from tkinter import ttk, Entry, Frame, Label, Y
 
 
 def btn_new_character_pressed():
@@ -61,9 +61,11 @@ frame_edit_character.pack(side="left", expand=True, fill="both")
 lbl_character_id = Label(frame_edit_character,
                          text="Id: "
                          ).grid(row=0, column=0)
-txt_character_id = Label(frame_edit_character,
-                         text="[VALOR DEL ID AQUÍ]"
-                         ).grid(row=0, column=1)
+# txt_character_id = Label(frame_edit_character,
+#                          text="[VALOR DEL ID AQUÍ]"
+#                          ).grid(row=0, column=1)
+txt_character_id = Entry().grid(row=0, column=1)
+
 lbl_character_name = Label(frame_edit_character,
                            text="Nombre: "
                            ).grid(row=1, column=0)

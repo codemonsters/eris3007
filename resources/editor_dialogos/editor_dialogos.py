@@ -3,7 +3,7 @@
 # En Linux, requiere tener instalado TK (ej: "$ yay -S tk")
 
 import tkinter as tk
-from tkinter import ttk, Entry, Frame, Label, Y
+from tkinter import ttk, Entry, Frame, Label, Y, filedialog
 
 
 def btn_new_character_pressed():
@@ -14,7 +14,20 @@ def btn_delete_character_pressed():
     pass
 
 
+def btn_choose_character_image_pressed():
+    pass
+
+
+def btn_character_edit_cancel_pressed():
+    pass
+
+
+def btn_character_edit_apply_pressed():
+    pass
+
+
 root = tk.Tk()
+
 root.title("Editor de Diálogos")
 root.geometry("800x600")
 
@@ -64,21 +77,29 @@ lbl_character_id = Label(frame_edit_character,
 # txt_character_id = Label(frame_edit_character,
 #                          text="[VALOR DEL ID AQUÍ]"
 #                          ).grid(row=0, column=1)
-txt_character_id = Entry().grid(row=0, column=1)
+txt_character_id = Entry(frame_edit_character).grid(row=0, column=1)
 
 lbl_character_name = Label(frame_edit_character,
                            text="Nombre: "
                            ).grid(row=1, column=0)
-txt_character_name = Label(frame_edit_character,
-                           text="[VALOR DEL NOMBRE AQUÍ]"
-                           ).grid(row=1, column=1)
+txt_character_name = Entry(frame_edit_character).grid(row=1, column=1)
+
 lbl_character_image = Label(frame_edit_character,
                             text="Imagen: ").grid(row=2, column=0)
-txt_character_image = Label(frame_edit_character,
-                            text="[NOMBRE DEL ARCHIVO IMAGEN AQUÍ]"
-                            ).grid(row=2, column=1)
 
-# lbl_temp.pack()
+frame_character_image = ttk.Frame(frame_edit_character)
+frame_character_image.grid(row=2, column=1)
+txt_character_image = Entry(frame_character_image)
+txt_character_image.pack(side="left")
+btn_choose_character_image = ttk.Button(frame_character_image, text="Examinar", command=btn_choose_character_image_pressed())
+btn_choose_character_image.pack(side="left")
+
+frame_character_edit_apply_or_cancel = ttk.Frame(frame_edit_character)
+frame_character_edit_apply_or_cancel.grid(row=3, column=1)
+btn_character_edit_apply = ttk.Button(frame_character_edit_apply_or_cancel, text="Apply", command=btn_character_edit_apply_pressed())
+btn_character_edit_apply.pack(side="left")
+btn_character_edit_cancel = ttk.Button(frame_character_edit_apply_or_cancel, text="Cancel", command=btn_character_edit_cancel_pressed())
+btn_character_edit_cancel.pack(side="left")
 
 # Pestaña Diálogos
 

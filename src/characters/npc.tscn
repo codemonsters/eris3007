@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtp60v8bkbg01"]
+[gd_scene load_steps=4 format=3 uid="uid://dlnmd42ehs7sd"]
 
-[ext_resource type="Texture2D" uid="uid://p5j75tirlukm" path="res://assets/monigote 32x32.png" id="1_pvpry"]
-[ext_resource type="Script" path="res://npc.gd" id="1_qwipo"]
+[ext_resource type="Script" path="res://characters/npc.gd" id="1_xk2ps"]
+[ext_resource type="Texture2D" uid="uid://p5j75tirlukm" path="res://assets/monigote 32x32.png" id="2_jjj7m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6m8i8"]
 
 [node name="npc" type="CharacterBody2D"]
 collision_layer = 3
-script = ExtResource("1_qwipo")
+script = ExtResource("1_xk2ps")
 dialog_name = "dialog1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_pvpry")
+texture = ExtResource("2_jjj7m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6m8i8")

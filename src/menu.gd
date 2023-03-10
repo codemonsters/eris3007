@@ -6,4 +6,4 @@ func _ready():
 	$BackgroundColor/Button.grab_focus()
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://level.tscn")
+	get_parent().start_game()

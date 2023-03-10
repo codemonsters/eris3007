@@ -1,54 +1,54 @@
 {
-    "characters" : {
-        "hero": {
-            "name": "Willy Fog",
-            "img": "hero.png"
-        },
-        "worker01": {
-            "name": "Worker",
-            "img": "worker01.png"
-        },
-        "refinery_boss": {
-            "name": "Mr. Huffhdfgdfg",
-            "img": "23423434.png"
-        }
-    },
-    "dialogs": {
-        "dialog1": {
-            "pre_conditions": [],
-            "conversation": [
-                {
-                    "type": "text",
-                    "from": "worker01",
-                    "content": ["Hola, me llamo Worker", "¿sabes dónde está el jefe?"]
-                },
-                {
-                    "type": "question",
-                    "from": "worker01",
-                    "content": "¿sabes dónde está el jefe?",
-                    "options": [
-                        {
-                            "content": "Ni idea",
-                            "signal": "le_decimos_a_paco_que_no_sabemos_donde_esta_el_jefe",
-                            "next_dialog": "dialog2"
-                        },
-                        {
-                            "content": "Sí, en su despacho",
-                            "signal": "le_decimos_a_paco_que_el_jefe_esta_en_su_despacho",
-                            "next_dialog": "dialog3"
-                        }
-                    ]
-                }
-            ],
-            "post_signal" : "ya_hemos_hablado_una_vez_con_paco (esta señal podría sobrar si enviamos siempre la misma señal al acabar cada dialogo)"
-        },
+	"characters" : {
+		"hero": {
+			"name": "Willy Fog",
+			"img": "hero.png"
+		},
+		"worker01": {
+			"name": "Worker",
+			"img": "worker01.png"
+		},
+		"refinery_boss": {
+			"name": "Mr. Huffhdfgdfg",
+			"img": "23423434.png"
+		}
+	},
+	"dialogs": {
+		"dialog1": {
+			"pre_conditions": [],
+			"conversation": [
+				{
+					"type": "text",
+					"from": "worker01",
+					"content": ["Hola, me llamo Worker", "¿sabes dónde está el jefe?"]
+				},
+				{
+					"type": "question",
+					"from": "worker01",
+					"content": "¿sabes dónde está el jefe?",
+					"options": [
+						{
+							"content": "Ni idea",
+							"signal": "le_decimos_a_paco_que_no_sabemos_donde_esta_el_jefe",
+							"next_dialog": "dialog2"
+						},
+						{
+							"content": "Sí, en su despacho",
+							"signal": "le_decimos_a_paco_que_el_jefe_esta_en_su_despacho",
+							"next_dialog": "dialog3"
+						}
+					]
+				}
+			],
+			"post_signal" : "ya_hemos_hablado_una_vez_con_paco (esta señal podría sobrar si enviamos siempre la misma señal al acabar cada dialogo)"
+		},
 
-        "dialog2": {
+		"dialog2": {
 
-        },
+		},
 
-        "dialog3": {
+		"dialog3": {
 
-        }
-    }
+		}
+	}
 }

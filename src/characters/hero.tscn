@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbtpckigns7l6"]
+[gd_scene load_steps=5 format=3 uid="uid://cmu1hq61wx6rm"]
 
-[ext_resource type="Script" path="res://hero.gd" id="1_l36rv"]
-[ext_resource type="Texture2D" uid="uid://b0coirgu8qr30" path="res://assets/Test1.png" id="2_axuof"]
-[ext_resource type="Texture2D" uid="uid://dmc7t3rs18dl3" path="res://assets/spot.png" id="3_jyqix"]
+[ext_resource type="Script" path="res://characters/hero.gd" id="1_vu1pc"]
+[ext_resource type="Texture2D" uid="uid://b0coirgu8qr30" path="res://assets/Test1.png" id="2_iwf14"]
+[ext_resource type="Texture2D" uid="uid://dmc7t3rs18dl3" path="res://assets/spot.png" id="3_trt0j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vtn63"]
 radius = 8.0
 height = 16.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_l36rv")
+[node name="Hero" type="CharacterBody2D"]
+script = ExtResource("1_vu1pc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 0
 texture_filter = 1
-texture = ExtResource("2_axuof")
+texture = ExtResource("2_iwf14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
@@ -27,7 +27,7 @@ zoom = Vector2(0.5, 0.5)
 energy = 1.5
 blend_mode = 2
 shadow_enabled = true
-texture = ExtResource("3_jyqix")
+texture = ExtResource("3_trt0j")
 texture_scale = 2.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

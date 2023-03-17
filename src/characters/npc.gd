@@ -3,11 +3,12 @@ class_name NPC
 
 @export var dialog_name: String
 
-var dialog_signal
+signal show_dialog(dialog_name)
 
 func _ready():
 	self.add_to_group("NPC")
 
 
 func speak():
-	DialogManager.start_dialog(dialog_name)
+	#dialog_signal.emit(dialog_name)
+	emit_signal("show_dialog", dialog_name)

@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/prota-22-23.png-972f6510bc9e725e8e7f6a2c0a370
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

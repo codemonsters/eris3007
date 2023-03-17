@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://gb436a5wrwva"]
+[gd_scene load_steps=12 format=3 uid="uid://gb436a5wrwva"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_ehlvl"]
 [ext_resource type="Texture2D" uid="uid://b5s3bhastsrwh" path="res://tileset.png" id="2_yke34"]
 [ext_resource type="PackedScene" uid="uid://cmu1hq61wx6rm" path="res://characters/hero.tscn" id="3_ju8sr"]
 [ext_resource type="PackedScene" uid="uid://dlnmd42ehs7sd" path="res://characters/npc.tscn" id="4_8v88n"]
+[ext_resource type="PackedScene" uid="uid://dedisxbvs08rq" path="res://DialogManager.tscn" id="5_unuyy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6cp8i"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -343,6 +344,10 @@ layer_0/tile_data = PackedInt32Array(-458786, 327680, 1, -393250, 327680, 1, -32
 
 [node name="Hero" parent="." instance=ExtResource("3_ju8sr")]
 position = Vector2(-512, -56)
+
+[node name="DialogManager" parent="Hero" instance=ExtResource("5_unuyy")]
+visible = false
+position = Vector2(39, -21)
 
 [node name="npc" parent="." instance=ExtResource("4_8v88n")]
 position = Vector2(-512, -128)

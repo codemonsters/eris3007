@@ -2,12 +2,48 @@
 
 # En Linux, requiere tener instalado TK (ej: "$ yay -S tk")
 
+import json
 import tkinter as tk
 from tkinter import ttk, Entry, Frame, Label, Y, filedialog
 
+JSON_FILE="../../src/assets/dialogs.json"
+
+
+def load_json():
+    f = open(JSON_FILE)
+    data = json.load(f)
+    f.close()
+    return data
+
+
+def save_json(data):
+    # Serializing json
+    json_object = json.dumps(data, indent=4)
+    with open(JSON_FILE, "w") as json_file:
+        json_file.write(json_object)
+
+
+def disable_character_edit_controls():
+    txt_character_id.config(state="disabled")
+    txt_character_name.config(state="disabled")
+    txt_character_image.config(state="disabled")
+    btn_choose_character_image.config(state="disabled")
+    btn_character_edit_apply.config(state="disabled")
+    btn_character_edit_cancel.config(state="disabled")
+
+
+def enable_character_edit_controls():
+    txt_character_id.config(state="normal")
+    txt_character_name.config(state="normal")
+    txt_character_image.config(state="normal")
+    btn_choose_character_image.config(state="normal")
+    btn_character_edit_apply.config(state="normal")
+    btn_character_edit_cancel.config(state="normal")
+
 
 def btn_new_character_pressed():
-    pass
+    enable_character_edit_controls()
+    txt_character_id.focus_set()
 
 
 def btn_delete_character_pressed():
@@ -15,6 +51,9 @@ def btn_delete_character_pressed():
 
 
 def btn_choose_character_image_pressed():
+    filetypes= (('text files', '*.txt'), ('All files', '*.*'))
+    #filename = filedialog.askopenfilename(filetypes=filetypes)
+    #print(f"->{filename}<-")
     pass
 
 
@@ -24,6 +63,18 @@ def btn_character_edit_cancel_pressed():
 
 def btn_character_edit_apply_pressed():
     pass
+
+
+try:
+    data = load_json()
+except FileNotFoundError:
+    print(f"Creando nuevo archivo JSON en: {JSON_FILE}")
+    data = {
+        "characters": {},
+        "dialogs": {}
+    }
+    save_json(data)
+    data = load_json()
 
 
 root = tk.Tk()
@@ -71,21 +122,19 @@ frame_edit_character = Frame(tab_characters)
 
 frame_edit_character.pack(side="left", expand=True, fill="both")
 
-lbl_character_id = Label(frame_edit_character,
-                         text="Id: "
-                         ).grid(row=0, column=0)
-# txt_character_id = Label(frame_edit_character,
-#                          text="[VALOR DEL ID AQUÍ]"
-#                          ).grid(row=0, column=1)
-txt_character_id = Entry(frame_edit_character).grid(row=0, column=1)
+lbl_character_id = Label(frame_edit_character, text="Id: ")
+lbl_character_id.grid(row=0, column=0)
 
-lbl_character_name = Label(frame_edit_character,
-                           text="Nombre: "
-                           ).grid(row=1, column=0)
-txt_character_name = Entry(frame_edit_character).grid(row=1, column=1)
+txt_character_id = Entry(frame_edit_character)
+txt_character_id.grid(row=0, column=1)
 
-lbl_character_image = Label(frame_edit_character,
-                            text="Imagen: ").grid(row=2, column=0)
+lbl_character_name = Label(frame_edit_character, text="Nombre: ")
+lbl_character_name.grid(row=1, column=0)
+txt_character_name = Entry(frame_edit_character)
+txt_character_name.grid(row=1, column=1)
+
+lbl_character_image = Label(frame_edit_character,text="Imagen: ")
+lbl_character_image.grid(row=2, column=0)
 
 frame_character_image = ttk.Frame(frame_edit_character)
 frame_character_image.grid(row=2, column=1)
@@ -104,6 +153,8 @@ btn_character_edit_cancel.pack(side="left")
 # Pestaña Diálogos
 
 # TODO: Implementar
+
+disable_character_edit_controls()
 
 # keep the window displaying
 root.mainloop()

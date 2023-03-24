@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://characters/hero.gd" id="1_vu1pc"]
 [ext_resource type="Texture2D" uid="uid://b0coirgu8qr30" path="res://assets/Test1.png" id="2_iwf14"]
-[ext_resource type="Texture2D" uid="uid://dmc7t3rs18dl3" path="res://assets/spot.png" id="3_trt0j"]
+[ext_resource type="Texture2D" uid="uid://3knw410aqg2i" path="res://assets/light.webp" id="3_mhlhl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vtn63"]
 radius = 8.0
@@ -24,11 +24,10 @@ shape = SubResource("CapsuleShape2D_vtn63")
 zoom = Vector2(0.5, 0.5)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 1.5
-blend_mode = 2
+energy = 0.7
 shadow_enabled = true
-texture = ExtResource("3_trt0j")
-texture_scale = 2.0
+texture = ExtResource("3_mhlhl")
+texture_scale = 1.5
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_max_distance = 16.0

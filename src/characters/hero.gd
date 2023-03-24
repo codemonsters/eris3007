@@ -62,3 +62,4 @@ func update_target_location(target_location: Vector2):
 
 func _on_show_dialog(dialog_name):
 	_is_speaking = true
+#	$PointLight2D.enabled = false

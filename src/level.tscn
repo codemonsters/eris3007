@@ -347,7 +347,6 @@ position = Vector2(-512, -56)
 
 [node name="DialogManager" parent="Hero" instance=ExtResource("5_unuyy")]
 visible = false
-position = Vector2(39, -21)
 
 [node name="npc" parent="." instance=ExtResource("4_8v88n")]
 position = Vector2(-512, -128)

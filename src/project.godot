@@ -15,10 +15,6 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-DialogManager="*res://utils/DialogManager.gd"
-
 [display]
 
 window/size/viewport_width=256

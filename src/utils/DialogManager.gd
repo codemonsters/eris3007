@@ -8,7 +8,7 @@ var dict: Dictionary
 # Loads the JSON with the dialogs
 func _ready():
 	#$../../npc.connect("show_dialog", _on_show_dialog)
-	#get_parent().get_parent().get_node("npc").connect("show_dialog", _on_show_dialog)
+	get_parent().get_parent().connect("show_dialog", _on_show_dialog)
 	#get_node("../../npc").connect("show_dialog", _on_show_dialog)
 	#TODO conectar la señal show_dialog del nodo npc a la funcion _on_show_dialog de este script
 	var file = FileAccess.open(dialog_path, FileAccess.READ)

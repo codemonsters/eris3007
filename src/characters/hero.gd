@@ -6,8 +6,10 @@ extends CharacterBody2D
 var speed = 250
 var speed_test = 300
 var path = []
+var _is_speaking = false
 
 func _ready():
+	get_parent().connect("show_dialog", _on_show_dialog)
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
 
@@ -49,9 +51,14 @@ func get_input():
 
 
 func _physics_process(delta):
-	get_input()
-	move_and_slide()
-	
+	if not _is_speaking:
+		get_input()
+		move_and_slide()
+
+
 func update_target_location(target_location: Vector2):
 	nav_agent.set_target_position(target_location)
 
+
+func _on_show_dialog(dialog_name):
+	_is_speaking = true

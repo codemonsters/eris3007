@@ -6,7 +6,8 @@ import json
 import tkinter as tk
 from tkinter import ttk, Entry, Frame, Label, Y, filedialog
 
-JSON_FILE="../../src/assets/dialogs.json"
+IMAGE_ROOT_FOLDER = "../../src/assets"
+JSON_FILE = "../../src/assets/dialogs.json"
 
 
 def load_json():
@@ -51,10 +52,11 @@ def btn_delete_character_pressed():
 
 
 def btn_choose_character_image_pressed():
-    filetypes= (('text files', '*.txt'), ('All files', '*.*'))
-    #filename = filedialog.askopenfilename(filetypes=filetypes)
-    #print(f"->{filename}<-")
-    pass
+    filetypes= (('png files', '*.png'), ('All files', '*.*'))
+    filename = filedialog.askopenfilename(initialdir=IMAGE_ROOT_FOLDER, filetypes=filetypes).strip()
+    if len(filename) > 0:
+        txt_character_image.delete(0, tk.END)
+        txt_character_image.insert(0, filename)
 
 
 def btn_character_edit_cancel_pressed():
@@ -140,7 +142,7 @@ frame_character_image = ttk.Frame(frame_edit_character)
 frame_character_image.grid(row=2, column=1)
 txt_character_image = Entry(frame_character_image)
 txt_character_image.pack(side="left")
-btn_choose_character_image = ttk.Button(frame_character_image, text="Examinar", command=btn_choose_character_image_pressed())
+btn_choose_character_image = ttk.Button(frame_character_image, text="Examinar", command=btn_choose_character_image_pressed)
 btn_choose_character_image.pack(side="left")
 
 frame_character_edit_apply_or_cancel = ttk.Frame(frame_edit_character)

@@ -24,6 +24,12 @@ def save_json(data):
         json_file.write(json_object)
 
 
+def clear_character_edit_fields():
+    txt_character_id.delete(0, tk.END)
+    txt_character_name.delete(0, tk.END)
+    txt_character_image.delete(0, tk.END)
+
+
 def disable_character_edit_controls():
     txt_character_id.config(state="disabled")
     txt_character_name.config(state="disabled")
@@ -60,10 +66,12 @@ def btn_choose_character_image_pressed():
 
 
 def btn_character_edit_cancel_pressed():
-    pass
+    clear_character_edit_fields()
+    disable_character_edit_controls()
 
 
 def btn_character_edit_apply_pressed():
+    # TODO: Comprobar si tenemos los datos necesarios y si todos los datos son válidos. Después, insertar o actualizar el personaje
     pass
 
 
@@ -147,9 +155,9 @@ btn_choose_character_image.pack(side="left")
 
 frame_character_edit_apply_or_cancel = ttk.Frame(frame_edit_character)
 frame_character_edit_apply_or_cancel.grid(row=3, column=1)
-btn_character_edit_apply = ttk.Button(frame_character_edit_apply_or_cancel, text="Apply", command=btn_character_edit_apply_pressed())
+btn_character_edit_apply = ttk.Button(frame_character_edit_apply_or_cancel, text="Apply", command=btn_character_edit_apply_pressed)
 btn_character_edit_apply.pack(side="left")
-btn_character_edit_cancel = ttk.Button(frame_character_edit_apply_or_cancel, text="Cancel", command=btn_character_edit_cancel_pressed())
+btn_character_edit_cancel = ttk.Button(frame_character_edit_apply_or_cancel, text="Cancel", command=btn_character_edit_cancel_pressed)
 btn_character_edit_cancel.pack(side="left")
 
 # Pestaña Diálogos

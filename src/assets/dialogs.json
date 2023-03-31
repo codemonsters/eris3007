@@ -1,4 +1,13 @@
 {
-    "characters": {},
+    "characters": {
+        "1": {
+            "name": "lolo",
+            "img": "monigote 32x32.png"
+        },
+        "lolo": {
+            "name": "lolo",
+            "img": "monigote 32x32.png"
+        }
+    },
     "dialogs": {}
 }

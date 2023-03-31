@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Laboratorio-22-23"
+config/name="Eris3007"
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"

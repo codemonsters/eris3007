@@ -668,7 +668,7 @@ layer_0/tile_data = PackedInt32Array(-1114170, 524288, 0, -1048634, 524288, 1, -
 position = Vector2(-512, -128)
 
 [node name="Hero" parent="." instance=ExtResource("3_ju8sr")]
-position = Vector2(-537, -77)
+position = Vector2(-717, -207)
 
 [node name="DialogManager" parent="Hero" instance=ExtResource("5_unuyy")]
 visible = false
